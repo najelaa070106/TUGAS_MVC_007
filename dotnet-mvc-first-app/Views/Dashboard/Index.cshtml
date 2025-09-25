@@ -1,0 +1,254 @@
+﻿@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="mb-3">Welcome to NajlaLTE Dashboard 🎉</h1>
+
+<div class="container-fluid">
+    <!-- Top Boxes -->
+    <div class="row g-0">
+        <div class="col-lg-3 col-6">
+            <div class="small-box pastel-purple1">
+                <div class="inner">
+                    <h3>150</h3>
+                    <p>New Orders</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-shopping-cart"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+            <div class="small-box pastel-purple2">
+                <div class="inner">
+                    <h3>53</h3>
+                    <p>New Users</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+            <div class="small-box pastel-purple3">
+                <div class="inner">
+                    <h3>44</h3>
+                    <p>Sales</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-6">
+            <div class="small-box pastel-purple4">
+                <div class="inner">
+                    <h3>65</h3>
+                    <p>Messages</p>
+                </div>
+                <div class="icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Middle Row: Charts & Tables -->
+    <div class="row g-0 mt-3 align-items-stretch">
+        <div class="col-lg-6">
+            <div class="card h-100">
+                <div class="card-header pastel-purple1 text-white">
+                    <h3 class="card-title">Sales Overview</h3>
+                </div>
+                <div class="card-body">
+                    <canvas id="salesChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="card h-100">
+                <div class="card-header pastel-purple2 text-white">
+                    <h3 class="card-title">Latest Orders</h3>
+                </div>
+                <div class="card-body">
+                    <table class="table table-sm mb-0">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#1001</td>
+                                <td>Harry</td>
+                                <td><span class="badge bg-success">Completed</span></td>
+                            </tr>
+                            <tr>
+                                <td>#1002</td>
+                                <td>Iqbal</td>
+                                <td><span class="badge bg-warning">Pending</span></td>
+                            </tr>
+                            <tr>
+                                <td>#1003</td>
+                                <td>Adit</td>
+                                <td><span class="badge bg-danger">Cancelled</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="card h-100">
+                <div class="card-header pastel-purple3 text-white">
+                    <h3 class="card-title">To-Do List</h3>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <ul class="list-unstyled mb-0 flex-grow-1">
+                        <li><input type="checkbox"> Approve new user registrations</li>
+                        <li><input type="checkbox"> Check sales report</li>
+                        <li><input type="checkbox"> Update system security</li>
+                        <li><input type="checkbox"> Backup database</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Row: Performance, Notifications, Quick Stats -->
+    <div class="row g-0 mt-3 align-items-stretch">
+        <div class="col-lg-6">
+            <div class="card h-100">
+                <div class="card-header pastel-purple4 text-white">
+                    <h3 class="card-title">System Performance</h3>
+                </div>
+                <div class="card-body">
+                    <canvas id="performanceChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="card h-100">
+                <div class="card-header pastel-purple1 text-white">
+                    <h3 class="card-title">Notifications</h3>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <ul class="list-unstyled mb-0 flex-grow-1">
+                        <li><i class="fas fa-bell text-warning"></i> New login from unknown device</li>
+                        <li><i class="fas fa-bell text-info"></i> System update available</li>
+                        <li><i class="fas fa-bell text-success"></i> Backup completed</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3">
+            <div class="card h-100">
+                <div class="card-header pastel-purple2 text-white">
+                    <h3 class="card-title">Quick Stats</h3>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <p><strong>Active Users:</strong> 120</p>
+                    <p><strong>Revenue:</strong> $5,200</p>
+                    <p><strong>Bounce Rate:</strong> 32%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Calendar & Notes Row -->
+    <div class="row g-0 mt-3 align-items-stretch">
+        <div class="col-lg-6">
+            <div class="card h-100">
+                <div class="card-header pastel-purple3 text-white">
+                    <h3 class="card-title">Calendar</h3>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <div id="calendar" class="flex-grow-1"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card h-100">
+                <div class="card-header pastel-purple4 text-white">
+                    <h3 class="card-title">Notes</h3>
+                </div>
+                <div class="card-body d-flex flex-column">
+                    <textarea class="form-control flex-grow-1" placeholder="Write your notes here..."></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+
+    <script>
+        // Sales Overview
+        var ctx1 = document.getElementById('salesChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [12, 19, 3, 5, 2, 3, 9],
+                    borderColor: '#7e57c2',
+                    backgroundColor: 'rgba(126, 87, 194, 0.2)',
+                    fill: true,
+                    tension: 0.3
+                }]
+            },
+            options: { responsive: true, plugins: { legend: { display: false } } }
+        });
+
+        // System Performance
+        var ctx2 = document.getElementById('performanceChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['CPU', 'Memory', 'Disk', 'Network'],
+                datasets: [{
+                    label: 'Usage (%)',
+                    data: [65, 45, 75, 30],
+                    backgroundColor: ['#9575cd','#7e57c2','#5e35b1','#4527a0']
+                }]
+            },
+            options: { responsive: true, plugins: { legend: { display: false } } }
+        });
+
+        // Calendar init
+        $(function () {
+            $("#calendar").datepicker();
+        });
+    </script>
+}
+
+<style>
+    /* Card dan layout */
+    .card {
+        margin: 0;
+        border-radius: 0;
+    }
+
+    /* Calendar full width & height */
+    #calendar {
+        width: 100% !important;
+        height: 100%;
+        box-sizing: border-box;
+    }
+</style>

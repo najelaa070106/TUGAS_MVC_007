@@ -1,0 +1,39 @@
+﻿@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml"; // pakai layout login khusus AdminLTE
+    ViewData["Title"] = "Login";
+}
+
+<div class="card">
+    <div class="card-body login-card-body">
+        <p class="login-box-msg">Sign in to start your session</p>
+
+        <form asp-controller="Account" asp-action="Login" method="post">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Username" name="username">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-user"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="password" class="form-control" placeholder="Password" name="password">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-lock"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                </div>
+            </div>
+        </form>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="text-danger mt-2">@ViewBag.Error</div>
+        }
+    </div>
+</div>

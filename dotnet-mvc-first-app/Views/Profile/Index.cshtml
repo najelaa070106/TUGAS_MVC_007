@@ -1,0 +1,93 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Profile";
+}
+
+<section class="content">
+    <div class="container-fluid">
+        <h2>Profile</h2>
+
+        <div class="row">
+            <!-- Kiri: Card profil -->
+            <div class="col-md-4">
+                <div class="card card-primary card-outline">
+                    <div class="card-body text-center">
+                        <!-- Foto -->
+                        <img class="profile-user-img img-fluid img-circle mb-3"
+                             src="~/images/nailong.jpg"
+                             alt="User profile picture"
+                             style="width: 120px; height: 120px; object-fit: cover;">
+
+                        <!-- Nama -->
+                        <h3 class="profile-username">Najla Permata</h3>
+                        <p class="text-muted">Software Engineer</p>
+
+                        <!-- Statistik -->
+                        <div class="mt-4">
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <span><b>Followers</b></span>
+                                <span>1,999,345</span>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <span><b>Following</b></span>
+                                <span>543</span>
+                            </div>
+                            <div class="d-flex justify-content-between border-bottom py-2">
+                                <span><b>Friends</b></span>
+                                <span>13,354</span>
+                            </div>
+                        </div>
+
+                        <!-- Tombol -->
+                        <a href="#" class="btn btn-primary btn-block mt-3">
+                            <b>Follow</b>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kanan: Info tambahan -->
+            <div class="col-md-8">
+                <!-- About Me -->
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">About Me</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Halo! Nama saya Najla, seorang mahasiswa TRPL yang suka desain UI pastel ungu 💜✨.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Kontak -->
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h5 class="mb-0">Contact Info</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-unbordered mb-0 text-start">
+                            <li class="list-group-item">
+                                <b>Email</b> <span class="float-right">najla@example.com</span>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Phone</b> <span class="float-right">+62 812-3456-7890</span>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Location</b> <span class="float-right">Cikarang, Indonesia</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- Project -->
+                <h5 class="mt-4">Recent Projects</h5>
+                <ul class="list-group text-start">
+                    <li class="list-group-item">🚍 Sistem Penyewaan Bus</li>
+                    <li class="list-group-item">🔧 Sistem Pengelolaan Bengkel</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,33 @@
+﻿@{
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<body class="hold-transition login-page">
+    <div class="login-box">
+        <!-- Logo -->
+        <div class="login-logo">
+            <b>🌸 Najla</b>LTE 🌸
+        </div>
+        <!-- Card -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Sign in to start your session</p>
+
+                <form asp-controller="Login" asp-action="Index" method="post">
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="username" placeholder="Username" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Password" required />
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                </form>
+
+                @if (ViewBag.Error != null)
+                {
+                    <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+                }
+            </div>
+        </div>
+    </div>
+</body>

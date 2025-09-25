@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - AdminLTE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- AdminLTE CSS -->
+    <link rel="stylesheet" href="~/adminlte/plugins/fontawesome-free/css/all.min.css" />
+    <link rel="stylesheet" href="~/adminlte/dist/css/adminlte.min.css" />
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/adminlte/plugins/bootstrap/css/bootstrap.min.css" />
+
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <partial name="_Navbar" />
+
+        <!-- Sidebar -->
+        <partial name="_Sidebar" />
+
+        <!-- Content Wrapper -->
+        <div class="content-wrapper">
+            <section class="content pt-3">
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <partial name="_Footer" />
+    </div>
+
+    <!-- Scripts -->
+    <script src="~/adminlte/plugins/jquery/jquery.min.js"></script>
+    <script src="~/adminlte/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/adminlte/dist/js/adminlte.min.js"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
